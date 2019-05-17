@@ -92,7 +92,7 @@ public class RecursiveWalk {
 
     public static void main(String[] args) {
         if (args == null || args.length != 2 || args[0] == null || args[1] == null) {
-            System.err.println("Usage: ru.ifmo.rain.ustinov.walk.RecursiveWalk inputfile outputfile");
+            System.err.println("Usage: RecursiveWalk inputfile outputfile");
         } else {
             Path inputFile, outputFile;
             try {

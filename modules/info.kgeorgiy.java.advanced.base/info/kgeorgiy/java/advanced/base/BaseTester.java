@@ -45,7 +45,7 @@ public class BaseTester {
         }
     }
 
-    protected void certify(final Class<?> token, final String salt) {
+    protected static void certify(final Class<?> token, final String salt) {
         try {
             final CG cg = (CG) Class.forName("info.kgeorgiy.java.advanced.base.CertificateGenerator").getDeclaredConstructor().newInstance();
             cg.certify(token, salt);
@@ -60,7 +60,12 @@ public class BaseTester {
     private void printUsage() {
         System.out.println("Usage:");
         for (final String name : tests.keySet()) {
-            System.out.format("    java -cp . -p . -m %s %s full.class.name [salt]%n", getClass().getPackage().getName(), name);
+            System.out.format(
+                    "    java -cp . -p . -m %s %s %s.class.name [salt]%n",
+                    getClass().getPackage().getName(),
+                    name,
+                    name
+            );
         }
         System.exit(1);
     }
